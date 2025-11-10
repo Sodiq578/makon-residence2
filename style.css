@@ -510,79 +510,109 @@ header {
 
 
 
-
-
-
-
-
-
-/* Modal umumiy */
+/* Modalni yashirish va umumiy sozlamalar */
 .modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(8px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 9999;
-}
-
-.modal.show {
-    opacity: 1;
-    visibility: visible;
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease-in-out;
 }
 
 .modal-content {
-    background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    max-width: 400px;
-    width: 90%;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-
-.modal-content input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 16px;
-    box-sizing: border-box;
-}
-
-.modal-content button {
-    padding: 12px 24px;
-    background: #294A95;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 6px;
-    font-weight: 600;
-    margin-top: 10px;
-    transition: 0.3s;
-}
-
-.modal-content button:hover {
-    background: #1e356e;
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 30px 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  position: relative;
+  animation: slideDown 0.4s ease-out;
 }
 
 .close {
-    position: absolute;
-    right: 15px;
-    top: 10px;
-    font-size: 28px;
-    font-weight: bold;
-    color: #aaa;
-    cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  color: #aaa;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 .close:hover {
-    color: #000;
+  color: #000;
+}
+
+.modal-content h3 {
+  color: #28a745;
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.modal-content p {
+  font-size: 16px;
+  color: #333;
+  margin: 10px 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Telegram tugma */
+.telegram-btn {
+  background-color: #0088cc;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 15px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.telegram-btn:hover {
+  background-color: #006699;
+  transform: scale(1.05);
+}
+
+/* Animatsiya */
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsiv dizayn */
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 20px 15px;
+    width: 95%;
+  }
+
+  .modal-content h3 {
+    font-size: 20px;
+  }
+
+  .modal-content p {
+    font-size: 14px;
+  }
+
+  .close {
+    font-size: 20px;
+  }
+
+  .telegram-btn {
+    width: 100%;
+    font-size: 15px;
+    padding: 10px 0;
+  }
 }
