@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsiv Header</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="header-box">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="./images/logo.png" alt="Logo">
+            </div>
+
+            <!-- Vaqt -->
+            <div class="time">
+                20:30 | 1-Noyabr
+            </div>
+        </div>
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        <p class="title">Davron Kabulovdan boshlang'ich to'lovsiz va kuniga 280 ming so'mdan to'lab uy olishni bilib oling!</p>
+    </div>
+</section>
+
+<section class="taqdimot-section">
+  <div class="container taq-box">
+    <div class="taqdimot-box">
+      <h2 class="taqdimot-title">BEPUL taqdimotda:</h2>
+
+      <p class="taqdimot-item">
+        Qanday qilib oyiga hech qanday foizlarsiz oyiga 4,000,000 soʻm va kuniga 280 ming soʻm toʻlab uy olishingiz mumkinligini
+      </p>
+      <p class="taqdimot-item">
+        Qanday qilib boshlangʻich toʻlovsiz 60 oyga foizsiz eng qulay shartlar bilan uy olish mumkinligini
+      </p>
+      <p class="taqdimot-item">
+        Va qanday qilib 5,000$ boshlangʻich toʻlov bilan uy olib Cobalt yutib olishiz mumkinligini bilib olasiz.
+      </p>
+
+      <div class="box-bottom">
+        <img src="./images/car.png" alt="">
+
+        <div class="bottom-text">
+            <h4>SOVG'A!</h4>
+            <p>4 TA COBALT avtomashinasidan birini yutib olish imkoniyati!</p>
+        </div>
+      </div>
+    </div>
+    <div class="taqdimot-img">
+      <img src="./images/man.png" alt="">
+    </div>
+  </div>
+
+
+  <button id="openModal" class="btn">Bepul qatnashish</button>
+</section>
+
+<!-- Modal form -->
+<div id="makon-modal" class="modal">
+    <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <h3>Ro'yxatdan o'tish</h3>
+        <form id="makonForm">
+            <input type="text" id="name" placeholder="Ismingiz" required>
+            <input type="tel" id="phone" placeholder="Telefon raqamingiz" required>
+            <button type="submit">Yuborish</button>
+        </form>
+    </div>
+</div>
+
+<!-- Muvaffaqiyat modal -->
+<div id="successModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="document.getElementById('successModal').style.display='none'">&times;</span>
+        <h3>Rahmat!</h3>
+        <p>Sizning so'rovingiz qabul qilindi. Tez orada siz bilan bog'lanamiz!</p>
+        <p>Bizning kanal: <a href="https://t.me/megaaksiya2026" target="_blank">Telegram kanal</a></p>
+    </div>
+</div>
+
+
+
+<script src="./main.js"></script>
+</body>
+</html>
