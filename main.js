@@ -4,7 +4,6 @@ const CHAT_ID   = '-4935605017';
 // Elementlar
 const openModalBtn = document.getElementById('openModal');
 const formModal = document.getElementById('makon-modal');
-const successModal = document.getElementById('successModal');
 const closeModalBtn = document.getElementById('closeModal');
 const makonForm = document.getElementById('makonForm');
 
@@ -13,26 +12,9 @@ openModalBtn.addEventListener('click', () => {
     formModal.classList.add('show');
 });
 
-// Modal yopish (x tugmasi)
+// Modal yopish faqat × tugmasi
 closeModalBtn.addEventListener('click', () => {
     formModal.classList.remove('show');
-});
-
-// Muvaffaqiyat modalini yopish
-document.querySelectorAll('#successModal .close').forEach(btn => {
-    btn.addEventListener('click', () => {
-        successModal.classList.remove('show');
-    });
-});
-
-// Tashqariga bosganda yopish
-window.addEventListener('click', (e) => {
-    if (e.target === formModal) {
-        formModal.classList.remove('show');
-    }
-    if (e.target === successModal) {
-        successModal.classList.remove('show');
-    }
 });
 
 // Formani yuborish
@@ -62,8 +44,10 @@ makonForm.addEventListener('submit', async (e) => {
 
         if (response.ok) {
             formModal.classList.remove('show');
-            successModal.classList.add('show');
             makonForm.reset();
+
+            // To'g'ridan-to'g'ri Telegram kanalga yo'naltirish
+            window.open('https://t.me/megaaksiya2026', '_blank');
         } else {
             throw new Error('Telegram xizmati xatosi');
         }
