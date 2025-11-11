@@ -6,17 +6,18 @@
 }
 
 body {
-  /* Qora gradient + fon rasmi */
   background-image: linear-gradient(
-      rgba(0, 0, 0, 0.6),   /* yuqori qismi qora (60% shaffof) */
-      rgba(0, 0, 0, 0.6)    /* pastki qismi qora (60% shaffof) */
+      to bottom, 
+      rgba(0, 0, 0, 0.9),   /* yuqori qismi – deyarli qora */
+      rgba(10, 10, 10, 0.278), /* o‘rtasi – biroz oqroq (yorug‘) */
+      rgba(0, 0, 0, 0.9)    /* pastki qismi – deyarli qora */
     ),
     url(./images/backround.jpg);
 
-  background-size: cover;       /* rasm ekran bo‘ylab cho‘ziladi */
-  background-position: center;  /* rasm o‘rtada joylashadi */
-  background-repeat: no-repeat; /* rasm takrorlanmaydi */
-  min-height: 100vh;            /* butun ekran balandligida */
+  background-size: cover;       
+  background-position: center;  
+  background-repeat: no-repeat; 
+  min-height: 100vh;            
 }
 
 
