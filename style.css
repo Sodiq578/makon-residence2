@@ -1,134 +1,154 @@
 /* RESET & BASIC */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background-image: linear-gradient(
-      to bottom, 
-      rgba(0, 0, 0, 0.9),   /* yuqori qismi – deyarli qora */
-      rgba(10, 10, 10, 0.278), /* o‘rtasi – biroz oqroq (yorug‘) */
-      rgba(0, 0, 0, 0.9)    /* pastki qismi – deyarli qora */
+  background: linear-gradient(
+      rgba(2, 21, 54, 0.81),   /* yuqoridan qora 70% */
+      rgba(0, 0, 0, 0.7)    /* pastdan qora 70% */
     ),
-    url(./images/backround.jpg);
+    url(./images/back1.jpg) no-repeat center center/cover;
 
-  background-size: cover;       
-  background-position: center;  
-  background-repeat: no-repeat; 
-  min-height: 100vh;            
 }
 
-
 .container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* HEADER STYLING */
 header {
-
-  padding: 15px 0;
-
+    
+    padding: 15px 0;
+ 
 }
 
 .header-box {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* USER INFO */
+.info {
+  position: relative; /* pseudo-element uchun kerak */
+  background-color: #071430;
+  padding: 20px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+ 
+.info::before {
+  content: "";
+  position: absolute;
+  top: -10px;  
+  left: 0;
+  width: 100%;
+  height: 20px;  
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), transparent);
+  pointer-events: none; /* hover va clickga ta'sir qilmasin */
+}
+
+
+ 
 .user-info {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+
 }
 
 .user-info img {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #4ca3ff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #4ca3ff;
 }
 
 .user-info span {
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 1.2;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.2;
 }
 
 /* LOGO */
 .logo img {
-  height: 60px;
-  transition: transform 0.3s ease;
+    height: 60px;
+    transition: transform 0.3s ease;
 }
 
 .logo img:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 /* TIME */
 .time {
-  font-size: 14px;
-  font-weight: 500;
-  opacity: 0.9;
-  background-color: #fff;
-  color: black;
-  padding: 10px 20px;
-  border-radius: 10px;
-}
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.9;
+    background-color: #fff;
+    color: black;
+    padding: 10px 20px ;
+    border-radius: 10px;
 
-/* ===== RESPONSIVE BREAKPOINTS ===== */
+    padding: 20px 10px;
+      display: flex;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+}
+ 
 
 /* Planshet (768px dan kichik) */
 @media (max-width: 768px) {
-  .header-box {
+    .header-box {
+   
+        gap: 10px;
+        text-align: center;
+    }
 
-    gap: 10px;
-    text-align: center;
-  }
+    .user-info {
+        justify-content: center;
+    }
 
-  .user-info {
-    justify-content: center;
-  }
+    .logo img {
+        height: 50px;
+    }
 
-  .logo img {
-    height: 50px;
-  }
-
-  .time {
-    font-size: 14px;
-  }
+    .time {
+        font-size: 14px;
+    }
 }
 
 /* Mobil (480px dan kichik) */
 @media (max-width: 480px) {
-  header {
-    padding: 10px 0;
-  }
+    header {
+        padding: 10px 0;
+    }
 
-  .user-info img {
-    width: 40px;
-    height: 40px;
-  }
+    .user-info img {
+        width: 40px;
+        height: 40px;
+    }
 
-  .user-info span {
-    font-size: 14px;
-  }
+    .user-info span {
+        font-size: 14px;
+    }
 
-  .logo img {
-    height: 45px;
-  }
+    .logo img {
+        height: 45px;
+    }
 
-  .time {
-    font-size: 13px;
-  }
+    .time {
+        font-size: 13px;
+    }
 }
-
 
 
 
@@ -144,15 +164,14 @@ header {
 
 
 .title {
-  font-size: 20px;
-  font-weight: 700;
-  text-align: center;
-  text-transform: uppercase;
-  /* Barcha harflarni katta qiladi */
-  margin-top: 20px;
-  color: #fff;
-   letter-spacing: 1px; 
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 26px; /* o'lchamni 22px ga o'zgartirdik */
+    font-weight: 400; /* Bebas Neue Regular uchun 400 yoki normal */
+    text-align: center;
+    text-transform: uppercase; /* barcha harflar katta bo'ladi */
+    margin-top: 20px;
+    color: #fff;
+    font-family: 'Bebas Neue', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 
@@ -166,21 +185,22 @@ header {
 /* TAQDIMOT BO‘LIMI */
 .taqdimot-section {
   position: relative;
-
+   
   color: #fff;
   overflow: hidden;
   margin-top: 30px;
+  height: 386px
 }
 
 /* ORQA FON RASMI (AFTER) */
-.taqdimot-box {
-  text-align: right;
+.taqdimot-box{
+    text-align: right;
 }
 
 
 
 /* BOX STILI */
-
+ 
 /* Sarlavha */
 .taqdimot-title {
   font-size: 14px;
@@ -201,136 +221,118 @@ header {
 /* Responsive */
 @media (max-width: 768px) {
   .taqdimot-box {
-    text-align: left;
-    /* Hamma narsa chap tomonda */
+    text-align: left; /* Hamma narsa chap tomonda */
   }
 
   .taqdimot-title {
     font-size: 22px;
-    text-align: left;
-    /* markazdan chapga */
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: left; /* markazdan chapga */
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
   }
 
-  .taqdimot-item {
+.taqdimot-item {
     font-size: 14px;
-    text-align: left;
-    /* chapga */
+    text-align: left; /* chapga */
     width: 234px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
-    line-height: 1.1;
-    /* har bir qator orasiga bo'shliq beradi */
-    margin-bottom: 8px;
-    /* agar elementlar orasida ham bo'shliq kerak bo'lsa */
-  }
+    line-height: 1.1; /* har bir qator orasiga bo'shliq beradi */
+    margin-bottom: 8px; /* agar elementlar orasida ham bo'shliq kerak bo'lsa */
+}
 
 }
 
 
 
-.taq-box {
-  display: flex;
-  /* margin-top: ; */
-
-}
-
-.taqdimot-img {
-  display: block;
-  margin: 0 auto;
-  /* gorizontal markazlash */
-  position: relative;
-  left: -9px;
-  /* ozgina o‘ngga surish */
+.taq-box{
+    display: flex;
+    
 }
 
 
+.taqdimot-img{
+    margin-left: -46px;
+    margin-top: -10px;
+    z-index: 1  ;
 
-.taqdimot-title {
-  font-size: 19px;
-  text-align: left;
+    
 }
 
 
-
-.box-bottom {
-
-  display: flex;
-  flex-direction: column;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 10px !important;
-  line-height: 1.6;
-  margin-top: 15px;
+    .taqdimot-title {
+        font-size: 19px;
+        text-align: left;
+    }
 
 
-}
+    
+    .box-bottom{
+        
+        display: flex;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 10px !important;
+        line-height: 1.6;
+        margin-top: 20px;
+        flex-direction: column;
+    }
 
-.box-bottom img {
-  position: relative;
-  /* yoki absolute, konteynerga qarab */
-  left: -20px;
-  /* rasmni o‘ngga suradi */
-  top: 80px;
-  /* vertikal markazlash */
-  transform: translateY(-50%);
-  /* rasmning o‘rtasini yuqoriga siljitadi */
-  top: 96px;
-}
 
-.bottom-text {
-  margin-top: 10px;
-  font-size: 16px;
-
-}
+    .bottom-text{
+        margin-top: 10px;
+        font-size: 12px;
+    }
 
 
 .btn {
-  /* Gradient fon */
-  background: linear-gradient(90deg, #294A95, #5086FF, #22418B);
+  /* Gradient fon - Figma bilan to'liq mos */
+  background: linear-gradient(90deg, 
+    #294A95 0%, 
+    #5086FF 46%, 
+    #22418B 100%
+  );
 
   /* Matn rangi */
   color: white;
 
-  /* Padding (yuqoridan/pastdan va chapdan/o‘ngdan) */
-  padding: 10px 20px;
-  width: 320px;
+  /* O'lchamlar */
+  width: 300px;
   height: 70px;
-  border-radius: 5px;
+  padding: 10px 20px; /* bu kerak emas, chunki width/height bor */
 
-  /* Chekka radius (ixtiyoriy) */
+  /* Chekka radius */
   border-radius: 5px;
-
-  /* Chekka chiziqni olib tashlash */
   border: none;
 
-  /* Kursor o‘zgartirish */
+  /* Kursor */
   cursor: pointer;
 
-  /* Matnni markazlashtirish */
+  /* Matn uslubi */
   text-align: center;
-
-  /* Matnni biroz qalinroq qilish */
   font-weight: 600;
   text-transform: uppercase;
-  /* barcha matnlarni KATTA harf qiladi */
+  font-size: 18px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
-  /* O‘tkazish effekti hover uchun */
-  transition: background 0.3s ease;
-  margin: 0 auto;
+  /* Flex markazlashtirish */
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -40px;
-  font-size: 18px;
-  z-index: 2342233 !important;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
+  /* Hover effekti */
+  transition: all 0.3s ease;
+
+  /* Joylashuv */
+  margin: 20px auto; /* -40px o'rniga ijobiy margin */
+  position: relative;
+  top: -60px;
+  z-index: 234;
 }
+
 
 /* Hover effekti */
 .btn:hover {
-  background: linear-gradient(90deg, #22418B, #5086FF, #294A95);
+    background: linear-gradient(90deg, #22418B, #5086FF, #294A95);
 }
 
 
@@ -348,12 +350,6 @@ header {
 
 
 
-
-.btn {
-  position: relative;
-  /* yoki absolute, fixed, sticky */
-  z-index: 2342233;
-}
 
 
 
@@ -380,290 +376,268 @@ header {
 
 /* Modal umumiy */
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 400px;
-  width: 90%;
-  text-align: center;
-  position: relative;
-}
-
-.modal-content input {
-  width: 90%;
-  padding: 10px;
-  margin: 10px 0;
-}
-
-.modal-content button {
-  padding: 10px 20px;
-  background: #294A95;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.close {
-  position: absolute;
-  right: 15px;
-  top: 10px;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-
-
-.modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  inset: 0;
-  /* left:0; top:0; right:0; bottom:0; */
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px);
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  z-index: 9999;
-}
-
-.modal.show {
-  opacity: 1;
-  visibility: visible;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Modal umumiy */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px);
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-}
-
-.modal.show {
-  display: flex;
-  opacity: 1;
-  visibility: visible;
-}
-
-.modal-content {
-  background: #fff;
-  padding: 30px;
-  border-radius: 12px;
-  max-width: 400px;
-  width: 90%;
-  text-align: center;
-  position: relative;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.modal-content input {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 16px;
-}
-
-.modal-content button {
-  padding: 12px 24px;
-  background: #294A95;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  border-radius: 6px;
-  font-weight: 600;
-  margin-top: 10px;
-  transition: 0.3s;
-}
-
-.modal-content button:hover {
-  background: #1e356e;
-}
-
-.close {
-  position: absolute;
-  right: 15px;
-  top: 10px;
-  font-size: 28px;
-  font-weight: bold;
-  color: #aaa;
-  cursor: pointer;
-}
-
-.close:hover {
-  color: #000;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Modalni yashirish va umumiy sozlamalar */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.6);
-  transition: all 0.3s ease-in-out;
-}
-
-.modal-content {
-  background-color: #fff;
-  margin: 10% auto;
-  padding: 30px 20px;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 400px;
-  text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  position: relative;
-  animation: slideDown 0.4s ease-out;
-}
-
-.close {
-  position: absolute;
-  top: 12px;
-  right: 15px;
-  color: #aaa;
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.close:hover {
-  color: #000;
-}
-
-.modal-content h3 {
-  color: #28a745;
-  font-size: 24px;
-  margin-bottom: 15px;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.modal-content p {
-  font-size: 16px;
-  color: #333;
-  margin: 10px 0;
-  font-family: 'Montserrat', sans-serif;
-}
-
-/* Telegram tugma */
-.telegram-btn {
-  background-color: #0088cc;
-  color: #fff;
-  border: none;
-  padding: 12px 20px;
-  font-size: 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
-  margin-top: 15px;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.telegram-btn:hover {
-  background-color: #006699;
-  transform: scale(1.05);
-}
-
-/* Animatsiya */
-@keyframes slideDown {
-  from {
-    transform: translateY(-50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
     opacity: 0;
-  }
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
 
-  to {
-    transform: translateY(0);
+/* Modal ochilganda */
+.modal.show {
     opacity: 1;
+    visibility: visible;
+}
+
+/* Modal oynasi */
+.modal-content {
+    background: #ffffff; /* oq fon */
+    padding: 30px 25px;
+    border-radius: 20px; /* yumaloq burchaklar */
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* yumshoq soyalar */
+    color: #333; /* matn rangi qora */
+    font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Inputlar */
+.modal-content input {
+    width: 90%;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 10px; /* yumaloq inputlar */
+    border: 2px solid #ccc; /* oq modal foniga mos rang */
+    outline: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* Input fokus effekti */
+.modal-content input:focus {
+    border-color: #294A95; /* fokusda rang o'zgaradi */
+    box-shadow: 0 0 5px rgba(41, 74, 149, 0.5);
+}
+
+
+/* Input hover/focus effekti oq modal uchun */
+.modal-content input:focus {
+    border-color: #294A95; /* ko‘k rang kontrast uchun */
+    box-shadow: 0 0 8px rgba(41, 74, 149, 0.5); /* yumshoq ko‘k soyalar */
+}
+
+
+/* Button */
+.modal-content button {
+    padding: 12px 25px;
+    background: #fff;
+    color: #294A95;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Button hover effekti */
+.modal-content button:hover {
+    background: #e0e0e0;
+    transform: scale(1.05);
+}
+
+/* Close tugma */
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.close:hover {
+    color: #ffd700; /* sariq rang hover effekti */
+    transform: scale(1.2);
+}
+
+
+
+/* Modal ichidagi button */
+.modal-content button {
+    width: 50%; /* button kengligi */
+    padding: 12px 20px;
+    background: linear-gradient(90deg, #294A95, #4A79D1); /* gradient fon */
+    color: #fff; /* matn rangi oq */
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(41, 74, 149, 0.3);
+}
+
+/* Hover effekti */
+.modal-content button:hover {
+    background: linear-gradient(90deg, #4A79D1, #294A95); /* gradient o'zgaradi */
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(41, 74, 149, 0.5);
+}
+
+/* Active (bosilganda) effekti */
+.modal-content button:active {
+    transform: scale(0.98);
+    box-shadow: 0 4px 10px rgba(41, 74, 149, 0.2);
+}
+
+
+
+
+
+
+
+
+
+.logo-img{
+    width: 80px;
+    height: 30px !important;
+
+}
+
+
+
+.car{
+    width: 110px;
+}
+
+
+
+
+
+
+.bottom-text-text {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* info  */
+
+.info-box{
+    border: 1px solid #fff;
+}
+
+
+
+
+
+
+/* INFO bo‘lim umumiy sozlamalari */
+.info {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto; /* markazga joylashtirish */
+  padding: 40px 20px;
+   
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Sarlavha */
+.info h3 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Har bir quti */
+.info-box {
+  background: rgba(255, 255, 255, 0.1); /* yarim shaffof fon */
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Hover effekti */
+.info-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Kirish animatsiyasi (fade-in) */
+.info-box {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.info-box:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.info-box:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* Responsiv dizayn */
+/* Responsive dizayn */
 @media (max-width: 480px) {
-  .modal-content {
-    padding: 20px 15px;
-    width: 95%;
+  .info {
+    padding: 25px 15px;
   }
-
-  .modal-content h3 {
-    font-size: 20px;
+  .info h3 {
+    font-size: 1.8rem;
   }
-
-  .modal-content p {
-    font-size: 14px;
-  }
-
-  .close {
-    font-size: 20px;
-  }
-
-  .telegram-btn {
-    width: 100%;
-    font-size: 15px;
-    padding: 10px 0;
+  .info-box {
+    padding: 18px;
+    font-size: 1rem;
   }
 }
 
@@ -671,30 +645,7 @@ header {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-.bottom-text-title {
-  color: white;
-  font-size: 20px;
-}
-
-.bottom-text2 {
-  color: white;
-  font-size: 14px;
-  white-space: nowrap;
-  /* Matnni bitta qatorda saqlaydi */
-  line-height: 1.2;
-  /* Qatorlar orasidagi balandlikni kamaytiradi */
-  text-align: left;
-  /* Markazga joylash uchun (ixtiyoriy) */
+.title-span{
+    background-color: #1149c1;
+    border-radius: 5px;
 }

@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="uz">
+
 <head>
-     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BEPUL Foizsiz Uy olish | Davron Kabulov</title>
-    <meta name="description" content="Davron Kabulovdan boshlang'ich to'lovsiz va kuniga 280 ming so'mdan to'lab uy olish imkoniyati. 4 ta Cobalt avtomashinasini yutib olish imkoniyati bilan bepul taqdimot.">
-   
-    <meta name="keywords" content="uy olish, foizsiz uy, boshlang'ich to'lovsiz uy, Cobalt avtomashina, Makon Residence, bepul taqdimot">
-   <!-- Meta Pixel Code -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Sayt sarlavhasi (brauzer tabida ko‘rinadi) -->
+  <title>BEPUL Foizsiz Uy olish | Davron Kabulov</title>
+
+  <!-- SEO -->
+  <meta name="description"
+    content="Davron Kabulovdan boshlang'ich to'lovsiz va kuniga 280 ming so'mdan to'lab uy olish imkoniyati. 4 ta Cobalt avtomashinasini yutib olish imkoniyati bilan bepul taqdimot.">
+  <meta name="keywords"
+    content="uy olish, foizsiz uy, boshlang'ich to'lovsiz uy, Cobalt avtomashina, Makon Residence, bepul taqdimot">
+
+  <!-- Favicon (brauzer tabida logotip) -->
+  <link rel="icon" type="image/png" href="./images/logo.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+  <!-- AOS animatsiya kutubxonasi -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+<!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -24,72 +40,111 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=983747003133082&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-    <link rel="stylesheet" href="./style.css">
+  <!-- Asosiy CSS -->
+  <link rel="stylesheet" href="./style.css">
 </head>
+
+
 <body>
 
-<header>
+  <header>
     <div class="container">
-        <div class="header-box">
-            <!-- Logo -->
-            <div class="logo">
-                <img src="./images/logo.png" alt="Logo">
-            </div>
-            <!-- Vaqt -->
-            <div class="time">
-                20:30 | 21-Noyabr
-            </div>
+      <div class="header-box">
+        <!-- Logo -->
+        <div class="logo">
+          <img class="logo-img" src="./images/logo.svg" alt="Logo">
         </div>
-    </div>
-</header>
 
-<section>
+        <!-- Vaqt -->
+        <div class="time">
+          20:30 | 21-Noyabr
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
     <div class="container">
-        <p class="title">Davron Kabulovdan boshlang'ich to'lovsiz va kuniga 280 ming so'mdan to'lab uy olishni bilib oling!</p>
+    <p class="title">
+  Davron Kabulovdan <span class="title-span">
+    boshlang'ich to'lovsiz va kuniga 280 ming so'mdan to'lab uy olishni
+  </span> bilib oling!
+</p>
+
     </div>
-</section>
+  </section>
 
-<section class="taqdimot-section">
-  <div class="container taq-box">
+  <section class="taqdimot-section">
+    <div class="container taq-box">
+      <div class="taqdimot-box">
 
-    <div class="box-bottom">
-        <img  src="./images/car2.png" alt="">
-        <div class="bottom-text">
-            <h3 class="bottom-text-title">SOVG'A!</h3>
-            <p class="bottom-text2">4 TA COBALT <br> avtomashinasidan birini <br> yutib olish imkoniyati!</p>
+
+
+        <div class="box-bottom">
+          <img class="car" src="./images/cobalt.svg" alt="">
+
+          <div class="bottom-text">
+            <h4>SOVG'A!</h4>
+            <p class="bottom-text-text">4 TA COBALT avtomashinasidan birini yutib olish imkoniyati!</p>
+          </div>
         </div>
+      </div>
+      <div class="taqdimot-img">
+        <img src="./images/davnav.png" alt="">
+      </div>
     </div>
 
-    <div class="taqdimot-img">
-      <img src="./images/man.png" alt="">
+
+    <button id="openModal" class="btn">Bepul qatnashish</button>
+  </section>
+   <section class="info">
+    <div class="info-boxes">
+      <h3 >BEPUL TAQDIMOTDA:</h3>
+
+      <div class="info-box" data-aos="fade-up" data-aos-delay="0" data-aos-duration="700">
+       Qanday qilib oyiga xech qanday foizlarsiz oyiga 4,000,000 so'm va kuniga 280 ming so'm to'lab uy olishingiz mumkinligini
+      </div>
+
+      <div class="info-box" data-aos="fade-up" data-aos-delay="100" data-aos-duration="700">
+       Qanday qilib boshlang'ich to'lovsiz 60 oyga foizsiz eng qulay shartlar bilan uy olish mumkinligini
+      </div>
+
+      <div class="info-box" data-aos="fade-up" data-aos-delay="200" data-aos-duration="700">
+Va Qanday qilib 5,000$ boshlang'ich to'lov bilan uy olib Cobalt yutib olishiz mumkinligini bilib olasiz.
+      </div>
+    </div>
+  </section>
+
+   
+  <div id="makon-modal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h3>Ro'yxatdan o'tish</h3>
+      <form id="makonForm">
+        <input type="text" id="name" placeholder="Ismingiz" required>
+        <input type="tel" id="phone" placeholder="Telefon raqamingiz" required>
+        <button type="submit">Yuborish</button>
+      </form>
     </div>
   </div>
 
-  <button id="openModal" class="btn">Bepul qatnashish</button>
-</section>
 
-<!-- Modal form -->
-<div id="makon-modal" class="modal">
-    <div class="modal-content">
-        <span id="closeModal" class="close">&times;</span>
-        <h3>Ro'yxatdan o'tish</h3>
-        <form id="makonForm">
-            <input type="text" id="name" placeholder="Ismingiz" required>
-            <input type="tel" id="phone" placeholder="Telefon raqamingiz" required>
-            <button type="submit">Yuborish</button>
-        </form>
-    </div>
-</div>
 
-<!-- Muvaffaqiyat modal -->
-<div id="successModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h3>Rahmat!</h3>
-        <p>Sizning so'rovingiz qabul qilindi. Tez orada siz bilan bog'lanamiz!</p>
-    </div>
-</div>
 
-<script src="./main.js"></script>
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    // AOS ni ishga tushirish
+    AOS.init({
+      duration: 800,        // default animation duration (ms)
+      easing: 'ease-out-cubic',
+      once: true,           // true — element faqat bir marta anim bo'ladi
+      mirror: false         // false — element scroll up qilganda repeat bo‘lmaydi
+    });
+  </script>
+
+  <script src="./main.js"></script>
 </body>
+
 </html>
